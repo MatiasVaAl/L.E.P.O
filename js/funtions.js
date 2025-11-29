@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Configuraciones Base ---
     const rutasBoca = [
-        'L.E.P.O/src/R.E.P.Omouth_closedR.png',  // 0: Cerrada (default)
-        'L.E.P.O/src/R.E.P.Omouth_mid_openR.png', // 1: Entreabierta
-        'L.E.P.O/src/R.E.P.Omouth_openR.png'    // 2: Abierta
+        './src/R.E.P.Omouth_closedR.png',  // 0: Cerrada (default)
+        './src/R.E.P.Omouth_mid_openR.png', // 1: Entreabierta
+        './src/R.E.P.Omouth_openR.png'    // 2: Abierta
         
     ];
 
-    const RUTA_CUERPO_FINAL = 'L.E.P.O/src/R.E.P.Omouth_closedR2.png';
+    const RUTA_CUERPO_FINAL = './src/R.E.P.Omouth_closedR2.png';
     const VELOCIDAD_ESCRITURA = 50; 
     const VELOCIDAD_CAMBIO_BOCA = 100; 
 
