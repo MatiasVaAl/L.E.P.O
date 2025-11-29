@@ -1,0 +1,457 @@
+/*Boton de pantalla*/
+.type--A {
+  --line_color: #555555;
+  --back_color: #ffecf6;
+}
+.type--B {
+  --line_color: #1b1919;
+  --back_color: #e9ecff;
+}
+.type--C {
+  --line_color: #00135c;
+  --back_color: #defffa;
+}
+.button {
+  position: relative;
+  z-index: 0;
+  width: 240px;
+  height: 56px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--line_color);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+.button__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.button::before,
+.button::after,
+.button__text::before,
+.button__text::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line_color);
+  transition: all 0.5s ease;
+}
+.button::before {
+  top: 0;
+  left: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button::after {
+  top: 0;
+  right: 54px;
+  width: 8px;
+}
+.button__text::before {
+  bottom: 0;
+  right: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button__text::after {
+  bottom: 0;
+  left: 54px;
+  width: 8px;
+}
+.button__line {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  overflow: hidden;
+}
+.button__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 300px;
+  border: solid 3px var(--line_color);
+}
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before {
+  left: 0;
+}
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before {
+  right: 0;
+}
+.button:hover {
+  letter-spacing: 6px;
+}
+.button:hover::before,
+.button:hover .button__text::before {
+  width: 8px;
+}
+.button:hover::after,
+.button:hover .button__text::after {
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button__drow1,
+.button__drow2 {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+}
+.button__drow1 {
+  top: -16px;
+  left: 40px;
+  width: 32px;
+  height: 0;
+  transform: rotate(30deg);
+}
+.button__drow2 {
+  top: 44px;
+  left: 77px;
+  width: 32px;
+  height: 0;
+  transform: rotate(-127deg);
+}
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after {
+  content: "";
+  position: absolute;
+}
+.button__drow1::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-60deg);
+}
+.button__drow1::after {
+  top: -10px;
+  left: 45px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(69deg);
+}
+.button__drow2::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-146deg);
+}
+.button__drow2::after {
+  bottom: 26px;
+  left: -40px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-262deg);
+}
+.button__drow1,
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2,
+.button__drow2::before,
+.button__drow2::after {
+  background: var(--back_color);
+}
+.button:hover .button__drow1 {
+  animation: drow1 ease-in 0.06s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow1::before {
+  animation: drow2 linear 0.08s 0.06s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow1::after {
+  animation: drow3 linear 0.03s 0.14s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2 {
+  animation: drow4 linear 0.06s 0.2s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2::before {
+  animation: drow3 linear 0.03s 0.26s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2::after {
+  animation: drow5 linear 0.06s 0.32s;
+  animation-fill-mode: forwards;
+}
+@keyframes drow1 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100px;
+  }
+}
+@keyframes drow2 {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  11% {
+    opacity: 1;
+  }
+  100% {
+    width: 120px;
+  }
+}
+@keyframes drow3 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80px;
+  }
+}
+@keyframes drow4 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 120px;
+  }
+}
+@keyframes drow5 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 124px;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button:not(:last-child) {
+  margin-bottom: 64px;
+}
+
+/* --- Ajuste del Contenedor del Diálogo --- */
+#semibot-dialogo-area {
+    /* Mantenemos el flujo vertical, pero centramos los elementos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduce el espacio entre viñeta y semibot */
+    width: 100%;
+    padding: 20px;
+    /* ... otros estilos de la caja principal ... */
+}
+
+#semibot-contenedor {
+    position: relative; 
+    /* Ajusta este ancho y alto si quieres que los brazos estén más cerca */
+    width: 250px; 
+    height: 440px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinea la base del semibot */
+}
+
+/* --- Ajuste de Posicionamiento de la Viñeta (Bocadillo) --- */
+.mensaje-caja {
+    position: relative; 
+    /* Mueve la burbuja ligeramente hacia arriba para que quede más cerca del semibot */
+    margin-bottom: -20px; 
+    z-index: 2; /* Asegura que la burbuja esté por encima de cualquier parte del semibot */
+    
+    /* ... estilos de borde y fondo ... */
+}
+
+/* El rabillo (Triángulo) debe apuntar hacia la cabeza del Semibot */
+.mensaje-caja::after {
+    /* ... estilos de diseño del triángulo ... */
+    bottom: -15px; /* Sigue apuntando hacia abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    /* ... bordes ... */
+}
+
+
+
+
+/* ========================================================== */
+/* 1. ANIMACIONES DE MOVIMIENTO (2-Fotogramas "steps(2)") */
+/* ========================================================== */
+
+/* Movimiento Vertical (Sube/Baja un poco, usado para el habla) */
+@keyframes habla-gesto-izq {
+    0% { transform: rotate(-85deg) }
+    100% { transform: rotate(-89deg) } 
+}
+
+@keyframes habla-gesto-der {
+    0% { transform: rotate(85deg)  }
+    100% { transform: rotate(80deg) } 
+}
+
+/* Movimiento de Saludo (Vaivén de 10 grados) */
+@keyframes brazo-saludo-fps {
+    0% { transform: rotate(85deg); } 
+    100% { transform: rotate(45deg); } /* Sube ligeramente */
+}
+
+
+@keyframes duda-mov-izq{
+    0% { transform: rotate(-65deg); } 
+    100% { transform: rotate(-61deg); } /* Sube ligeramente */
+}
+
+
+@keyframes duda-mov-der {
+    0% { transform: rotate(65deg)  }
+    100% { transform: rotate(61deg) } 
+}
+
+
+@keyframes cora-izq{
+    0% { transform: rotate(-65deg); } 
+    100% { transform: rotate(-61deg); } /* Sube ligeramente */
+}
+
+
+@keyframes cora-der {
+    0% { transform: rotate(65deg)  }
+    100% { transform: rotate(61deg) } 
+}
+
+
+/* ========================================================== */
+/* 2. CLASES DE ACTIVACIÓN DE ANIMACIÓN (Añadidas por JavaScript) */
+/* ========================================================== */
+
+/* Clase para el saludo (Brazo Izquierdo) */
+.brazo-saludando {
+    /* La animación usa 'steps(2)' para el efecto de pocos FPS */
+    animation: brazo-saludo-fps 0.5s steps(2) infinite alternate forwards; 
+}
+
+/* Clase de HABLA en la POSE DE GESTO (Nueva Clase) */
+.habla-gesto-izq-mov {
+    animation: habla-gesto-izq 0.4s steps(2) infinite alternate forwards; 
+}
+
+.habla-gesto-der-mov {
+    animation: habla-gesto-der 0.4s steps(2) infinite alternate forwards;
+    animation-delay: 0.5s
+}
+
+
+.duda-mov-izq {
+    animation: duda-mov-izq 0.4s steps(2) infinite alternate forwards; 
+}
+
+.duda-mov-der {
+    animation: duda-mov-der 0.4s steps(2) infinite alternate forwards;
+}
+
+
+
+.cora-izq {
+    animation: cora-izq 0.4s steps(2) infinite alternate forwards; 
+}
+
+.cora-der {
+    animation: cora-der 0.4s steps(2) infinite alternate forwards;
+}
+
+/* ========================================================== */
+/* 3. ESTILOS BASE Y POSICIONAMIENTO DE LOS BRAZOS */
+/* ========================================================== */
+
+.semibot-brazo {
+    position: absolute; 
+    
+    /* 🌟 DIMENSIONES DE LA IMAGEN DEL BRAZO 🌟 */
+    width: 150px; 
+    height: 100px; 
+    
+    /* background-color: rgba(255, 0, 0, 0.5); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0; /* Detrás del cuerpo */
+    
+    /* 🌟 PUNTO DE ROTACIÓN: Esquina superior/centro para el hombro 🌟 */
+    transform-origin: 75px 5px; 
+    
+    /* Por defecto, sin animación activa. La animación se añade por JS */
+}
+
+#brazo-izquierdo {
+    background-image: url('../src/R.E.P.Oleft_armR.png'); 
+    
+    /* AJUSTES PARA EL HOMBRO IZQUIERDO */
+    /*top: 15px; /* Distancia vertical desde el borde superior del contenedor */
+    /* right: 195px; /* Distancia horizontal desde el borde derecho del contenedor */
+    
+    /* Posición inicial de descanso (diagonal abajo) */
+    transform: rotate(45deg); 
+}
+
+#brazo-derecho {
+    background-image: url('../src/R.E.P.Oright_armR.png'); 
+    
+    /* AJUSTES PARA EL HOMBRO DERECHO */
+    /*top: 135px; */
+    /* left: 195px; /* Distancia horizontal desde el borde izquierdo del contenedor */
+    
+    /* Posición inicial de descanso (diagonal abajo) */
+    transform: rotate(-45deg); 
+}
+
+
+
+/* 🌟 ESTILOS PARA EL CORAZÓN 🌟 */
+#semibot-corazon {
+    position: absolute;
+    width: 60px; /* Ajusta el tamaño del corazón según tus necesidades */
+    height: 60px;
+    background-image: url('../src/Cocoro.png'); /* Ruta a tu corazón */
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    background-color: red;
+    z-index: 100; /* Para que esté por encima de los brazos */
+
+    /* Posición inicial (ajustada en JS) */
+    top: 0; 
+    left: 0;
+
+    /* Oculto por defecto */
+    opacity: 0;
+    transform: scale(0.5); /* Empieza pequeño */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transición suave de aparición */
+}
+
+/* Clase para mostrar el corazón */
+.semibot-corazon-visible {
+    opacity: 1;
+    transform: scale(1);
+}
