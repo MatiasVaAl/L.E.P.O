@@ -405,7 +405,7 @@
 }
 
 #brazo-izquierdo {
-    background-image: url('./src/R.E.P.Oleft_armR.png'); 
+    background-image: url('../src/R.E.P.Oleft_armR.png'); 
     
     /* AJUSTES PARA EL HOMBRO IZQUIERDO */
     /*top: 15px; /* Distancia vertical desde el borde superior del contenedor */
@@ -416,7 +416,7 @@
 }
 
 #brazo-derecho {
-    background-image: url('./src/R.E.P.Oright_armR.png'); 
+    background-image: url('../src/R.E.P.Oright_armR.png'); 
     
     /* AJUSTES PARA EL HOMBRO DERECHO */
     /*top: 135px; */
@@ -433,7 +433,7 @@
     position: absolute;
     width: 60px; /* Ajusta el tamaño del corazón según tus necesidades */
     height: 60px;
-    background-image: url('./src/Cocoro.png'); /* Ruta a tu corazón */
+    background-image: url('../src/Cocoro.png'); /* Ruta a tu corazón */
     background-size: contain;
     background-repeat: no-repeat;
 
