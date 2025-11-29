@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         {
-            mensaje: "Y quisiera saber si. Gustarias de salir conmigo? ",
+            mensaje: "Y quisiera saber si. Gustarias de ser mi nonvia? ",
             poseInicial: "descanso", 
             animacionMovimiento: "habla_ambos", 
             terminar: "descanso"
